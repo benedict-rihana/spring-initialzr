@@ -4,6 +4,10 @@ import benedict.zhang.RequestURLBuilder;
 import benedict.zhang.annotation.Param;
 import benedict.zhang.datamodel.InitializeInfo;
 import java.util.Arrays;
+
+import benedict.zhang.datamodel.SpringInitOptions;
+import org.apache.commons.cli.BasicParser;
+import org.apache.commons.cli.ParseException;
 import org.junit.jupiter.api.Test;
 
 /**
@@ -29,5 +33,19 @@ public class Playground {
     final var builder = new RequestURLBuilder();
     builder.withInitializeInfo(initInfo);
     System.out.println(builder.build());
+  }
+
+  @Test
+  public void testOptions(){
+    String[] args = {"--artifact-id=my-service"};
+    var paser = new BasicParser();
+    try {
+      SpringInitOptions.OPTIONS.getOptions().forEach(opt->{
+        System.out.println(opt.toString());
+      });
+      var options = paser.parse(SpringInitOptions.OPTIONS,args);
+    } catch (ParseException e) {
+      e.printStackTrace();
+    }
   }
 }
