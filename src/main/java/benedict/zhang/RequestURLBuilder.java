@@ -9,7 +9,7 @@ import java.util.Map;
 import java.util.concurrent.atomic.AtomicBoolean;
 
 public class RequestURLBuilder {
-  private Map<String, String> paramKV = new HashMap<>();
+  private final Map<String, String> paramKV = new HashMap<>();
 
   public RequestURLBuilder withParamValue(String paramName, String paramValue) {
     if(paramName == null || paramValue == null) return this;

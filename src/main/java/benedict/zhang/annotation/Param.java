@@ -7,5 +7,5 @@ import java.lang.annotation.*;
 @Retention(RetentionPolicy.RUNTIME)
 public @interface Param {
 
-    public String name() default "";
+    String name() default "";
 }

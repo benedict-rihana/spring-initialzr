@@ -8,7 +8,7 @@ import java.util.List;
  */
 public class Dependecies {
 
-  private List<Dependecy> pDependecies = new ArrayList<>();
+  private final List<Dependecy> pDependecies = new ArrayList<>();
 
   public Dependecies addDependecy(Dependecy dependecy) {
     this.pDependecies.add(dependecy);

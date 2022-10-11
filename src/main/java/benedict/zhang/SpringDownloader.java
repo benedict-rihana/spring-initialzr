@@ -1,18 +1,19 @@
 package benedict.zhang;
 
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+
 import java.io.File;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
-import okhttp3.OkHttpClient;
-import okhttp3.Request;
 
 /**
  * SpringDownloader
  */
 public class SpringDownloader {
 
-  private String urlStr;
+  private final String urlStr;
 
   public SpringDownloader(String url) {
     this.urlStr = url;
@@ -45,7 +46,6 @@ public class SpringDownloader {
       }
     } catch (Exception e) {
       e.printStackTrace();
-    } finally {
     }
   }
 }

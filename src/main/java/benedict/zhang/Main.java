@@ -1,16 +1,8 @@
 package benedict.zhang;
 
 import benedict.zhang.datamodel.InitializeInfo;
-
-import java.io.BufferedOutputStream;
-import java.io.File;
-import java.io.FileOutputStream;
-import java.net.URL;
-import java.util.Arrays;
-
 import benedict.zhang.datamodel.SpringInitOptions;
 import org.apache.commons.cli.BasicParser;
-import org.apache.commons.cli.GnuParser;
 import org.apache.commons.cli.HelpFormatter;
 import org.apache.commons.cli.ParseException;
 
@@ -37,7 +29,6 @@ public class Main {
             return;
         }
         System.out.println("Generating Spring Project: groupId=" + groupId + "\tartifactId=" + artifactId);
-        // TODO Apache CLI implementation to read value from cmd line
         final var initializeInfo = new InitializeInfo(groupId, artifactId);
         final var urlBuilder = new RequestURLBuilder();
         final var initUrlStr = urlBuilder.withInitializeInfo(initializeInfo).build();

@@ -7,7 +7,7 @@ public enum Packaging {
   JAR("jar"),
   WAR("war");
 
-  private String packagingName;
+  private final String packagingName;
 
   Packaging(String packagingName) {
     this.packagingName = packagingName;

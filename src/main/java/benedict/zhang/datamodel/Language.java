@@ -4,7 +4,7 @@ public enum Language {
   JAVA("java"),
   KOTLIN("kotlin");
 
-  private String languageName;
+  private final String languageName;
 
   Language(String languageName) {
     this.languageName = languageName;

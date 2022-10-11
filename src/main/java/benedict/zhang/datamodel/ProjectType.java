@@ -4,7 +4,7 @@ public enum ProjectType {
     GRADLE("gradle-project");
 
 
-    private String typeName;
+    private final String typeName;
     ProjectType(String typeName){
         this.typeName = typeName;
     }
