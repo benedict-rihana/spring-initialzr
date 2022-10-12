@@ -29,3 +29,6 @@ build
 .project
 .idea
 .DS_Store
+install.sh
+install.bat
+
