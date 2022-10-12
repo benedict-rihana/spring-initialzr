@@ -41,11 +41,6 @@ public class InitializeInfo {
 
   @Param(name = "javaVersion")
   private String javaVersion = "17";
-  // private String packageName;
-  // private String packageName;
-  // private String packageName;
-  // private String packageName;
-  // private String packageName;
 
   public InitializeInfo(String groupId, String applicationName) {
     this.baseDir = applicationName;

@@ -1,6 +1,7 @@
 package benedict.zhang;
 
 import java.io.File;
+import java.io.OutputStream;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
@@ -33,6 +34,19 @@ public class SpringDownloader {
       }
     } catch (Exception e) {
       e.printStackTrace();
+    }
+  }
+
+  public void download(OutputStream os) {
+    try {
+      final var client = new OkHttpClient();
+      final var request = (new Request.Builder()).url(urlStr).build();
+      try (final var resonse = client.newCall(request).execute()) {
+        os.write(resonse.body().bytes());
+      } catch (Exception e) {
+        e.printStackTrace();
+      }
+    } finally {
     }
   }
 }
