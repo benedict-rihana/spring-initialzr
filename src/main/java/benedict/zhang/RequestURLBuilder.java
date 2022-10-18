@@ -11,6 +11,10 @@ public class RequestURLBuilder {
 
   private final Map<String, String> paramKV = new HashMap<>();
 
+  private final String api;
+
+  public RequestURLBuilder(String api) { this.api = api; }
+
   public RequestURLBuilder withParamValue(String paramName, String paramValue) {
     if (paramName == null || paramValue == null)
       return this;
@@ -41,7 +45,7 @@ public class RequestURLBuilder {
   }
 
   public String build() {
-    var sb = new StringBuilder(Constants.BASE_URL);
+    var sb = new StringBuilder(api);
     if (!sb.isEmpty()) {
       sb.append("?");
       AtomicBoolean paramInitialized = new AtomicBoolean(false);

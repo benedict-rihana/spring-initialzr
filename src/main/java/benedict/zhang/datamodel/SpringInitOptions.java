@@ -11,13 +11,25 @@ public class SpringInitOptions {
   public static final Options OPTIONS = new Options();
 
   static {
-    OPTIONS.addOption(OptionBuilder
-            .withLongOpt("group-id").withArgName("group-id")
-            .withDescription("Project Group Id").hasArg().withValueSeparator().create());
-    OPTIONS.addOption(OptionBuilder
-        .withLongOpt("artifact-id").withArgName("artifact-id")
-        .withDescription("Project Artifact Id")
-        .hasArg().withValueSeparator()
-        .create());
+    // TODO Add init option to support cli
+    // TODO Add option `api` to support url customization
+    OPTIONS.addOption(OptionBuilder.withLongOpt("group-id")
+                          .withArgName("group-id")
+                          .withDescription("Project Group Id")
+                          .hasArg()
+                          .withValueSeparator()
+                          .create());
+    OPTIONS.addOption(OptionBuilder.withLongOpt("artifact-id")
+                          .withArgName("artifact-id")
+                          .withDescription("Project Artifact Id")
+                          .hasArg()
+                          .withValueSeparator()
+                          .create());
+    OPTIONS.addOption(OptionBuilder.withLongOpt("api")
+                          .withArgName("api")
+                          .withDescription("Spring Initializer URL")
+                          .hasArg()
+                          .withValueSeparator()
+                          .create());
   }
 }

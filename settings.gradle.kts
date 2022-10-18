@@ -1,2 +1,1 @@
-rootProject.name = "SpringInitializer"
-
+rootProject.name = "spring"
