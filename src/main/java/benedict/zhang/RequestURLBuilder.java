@@ -47,7 +47,7 @@ public class RequestURLBuilder {
   public String build() {
     var sb = new StringBuilder(api);
     if (!sb.isEmpty()) {
-      sb.append("?");
+      sb.append("starter.zip").append("?");
       AtomicBoolean paramInitialized = new AtomicBoolean(false);
       paramKV.forEach((paramName, paramValue) -> {
         if (paramInitialized.get()) {

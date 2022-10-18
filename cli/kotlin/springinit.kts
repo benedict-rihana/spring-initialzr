@@ -1,5 +1,12 @@
 #! /usr/bin/env kotlinc-jvm -script
 
+
+
+import java.lang.ProcessBuilder
+import java.util.concurrent.TimeUnit 
+
+
+
 val springAPI = "https://start.spring.io/"
 println("*******************************************")
 println("*                                         *")
@@ -27,15 +34,25 @@ when (api) {
 }
 
 
-val command = "spring init --group-id ${groupId} --artifact-id ${artifactId} "
+val command = "springtools --init --group-id ${groupId} --artifact-id ${artifactId} "
 
 if(api == ""){
-  println(command)
+  exec(command)
 }else{
   val commandWithAPI = "${command} --api ${api}"
-  println(commandWithAPI)
+  exec(commandWithAPI)
 }
 
+fun exec(cmd : String) {
+  println(cmd)
+  val workingDir = java.io.File(".")
+  var commands = cmd.split(" ").toTypedArray()
+  ProcessBuilder(cmd.split(" "))
+  .directory(workingDir)
+  .redirectOutput(ProcessBuilder.Redirect.INHERIT)
+  .redirectError(ProcessBuilder.Redirect.INHERIT)
+  .start().waitFor(60, TimeUnit.SECONDS)
+}
 
 
 

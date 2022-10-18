@@ -13,6 +13,9 @@ public class SpringInitOptions {
   static {
     // TODO Add init option to support cli
     // TODO Add option `api` to support url customization
+    OPTIONS.addOption(OptionBuilder.withLongOpt("init")
+                          .withDescription("Init command")
+                          .create());
     OPTIONS.addOption(OptionBuilder.withLongOpt("group-id")
                           .withArgName("group-id")
                           .withDescription("Project Group Id")

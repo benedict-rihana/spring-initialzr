@@ -15,6 +15,10 @@ public class Main {
     String api = null;
     try {
       var cmdLine = optionParser.parse(SpringInitOptions.OPTIONS, args);
+      if (!cmdLine.hasOption("init")) {
+        printHelp();
+        return;
+      }
       if (cmdLine.hasOption("artifact-id") && cmdLine.hasOption("group-id")) {
         artifactId = cmdLine.getOptionValue("artifact-id");
         groupId = cmdLine.getOptionValue("group-id");
